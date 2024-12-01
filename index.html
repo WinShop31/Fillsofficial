@@ -4,59 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BIO</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Roboto', sans-serif;
+            height: 100vh;
+            font-family: Arial, sans-serif;
             color: #fff;
             background: black;
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
-            height: 100vh;
+            align-items: center;
             overflow: hidden;
         }
-
-        .bio-container {
-            background: rgba(0, 0, 0, 0.85);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
-            text-align: center;
-            width: 90%;
-            max-width: 400px;
-        }
-
-        .bio-container p {
-            margin: 10px 0;
-            font-size: 18px;
-        }
-
-        .bio-buttons {
-            margin-top: 20px;
-        }
-
-        .bio-buttons button {
-            background: #1e90ff;
-            border: none;
-            border-radius: 10px;
-            color: #fff;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            margin: 5px;
-            transition: background 0.3s, transform 0.2s;
-        }
-
-        .bio-buttons button:hover {
-            background: #1c86ee;
-            transform: scale(0.95);
-        }
-
-        video.background-video {
+        video {
             position: fixed;
             top: 0;
             left: 0;
@@ -64,30 +25,46 @@
             height: 100%;
             object-fit: cover;
             z-index: -1;
-            filter: blur(8px);
-            opacity: 0.7;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        button {
+            background: #1e90ff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #0073e6;
         }
     </style>
 </head>
 <body>
-    <video class="background-video" autoplay muted loop>
-        <source src="video/VID_20241201_144313_293.mp4" type="video/mp4">
+    <video autoplay muted loop>
+        <source src="video/video.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
-    <div class="bio-container">
+    <div class="content">
         <p>● Name: Artem</p>
         <p>● Y.o: 13</p>
         <p>● Birthday: 28.05</p>
         <p>● Country: 🇺🇦 Ukraine</p>
         <p>● City: Buchach</p>
         <p>● Languages: 🇺🇸 English, 🇺🇦 Ukrainian, 🇷🇺 Russian</p>
-
-        <div class="bio-buttons">
+        <div>
             <button onclick="window.location.href='https://t.me/Foxy437'">Foxy437</button>
             <button onclick="window.location.href='http://t.me/send?start=IV43ZGy82G6R'">Donate</button>
-            <button onclick="window.location.href='https://example.com/page1'">Page 1</button>
-            <button onclick="window.location.href='https://example.com/page2'">Page 2</button>
         </div>
     </div>
 </body>
