@@ -2,204 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>БИО</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIO</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap">
     <style>
         body {
             margin: 0;
             padding: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
             font-family: 'Roboto', sans-serif;
             color: #fff;
             background: black;
-            overflow: hidden;
-            touch-action: none;
-            user-select: none;
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        .menu {
             display: flex;
-            justify-content: center;
-            background: rgba(0, 0, 0, 0.85);
-            padding: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            width: 100%;
-        }
-        .menu a {
-            color: #e0e0e0;
-            text-decoration: none;
-            padding: 15px 30px;
-            font-size: 18px;
-            transition: background 0.3s, color 0.3s;
-        }
-        .menu a.active {
-            background: #1e90ff;
-            color: #fff;
-            border-radius: 5px;
-        }
-        .content-container {
-            display: flex;
-            height: calc(100vh - 60px);
-            width: 200%;
-            transform: translateX(-50%);
-            transition: transform 0.5s ease;
-        }
-        .content {
-            width: 50%;
-            height: 100%;
-            position: relative;
-            transition: opacity 0.5s ease;
-            opacity: 0;
-            z-index: 992837383;
-            overflow: hidden;
-        }
-        .content.active {
-            opacity: 1;
-        }
-        #bio {
-            background: url('video/ssstik.io_1728506933758.mp4') no-repeat center center/cover;
-            display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
+            height: 100vh;
+            overflow: hidden;
         }
-        #fohosting {
-            background: url('video/ssstik.io_1728506933758.mp4') no-repeat center center/cover;
-        }
-        .video-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 50%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-            filter: blur(8px);
-        }
-        .login-box {
-            background: rgba(0, 0, 0, 0.85);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
-            width: 80%;
-            max-width: 400px;
-            height: auto;
-            box-sizing: border-box;
-            text-align: center;
-            margin: auto;
-            position: relative;
-            z-index: -7;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-        .login-box h1 {
-            margin-bottom: 30px;
-            font-size: 36px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            color: #f4f4f4;
-        }
-        .login-box input[type="text"], .login-box input[type="password"] {
-            width: calc(100% - 32px);
-            padding: 15px;
-            margin: 10px 0;
-            border: 1px solid #444;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.2);
-            color: #e0e0e0;
-            font-size: 16px;
-            outline: none;
-            transition: background 0.3s, transform 0.2s;
-            box-sizing: border-box;
-        }
-        .login-box input[type="text"]:focus, .login-box input[type="password"]:focus {
-            background: rgba(255, 255, 255, 0.3);
-            transform: scale(1.02);
-        }
-        .login-box button {
-            width: calc(100% - 32px);
-            padding: 15px;
-            border: none;
-            border-radius: 10px;
-            background: #1e90ff;
-            color: #ffffff;
-            font-size: 18px;
-            cursor: pointer;
-            transition: background 0.3s, transform 0.2s;
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-            -webkit-tap-highlight-color: transparent;
-        }
-        .login-box button:hover {
-            background: #1e90ff;
-        }
-        .login-box button:active {
-            background: #1e90ff;
-            transform: scale(0.90);
-        }
-        .login-box a {
-            color: #1e90ff;
-            text-decoration: none;
-            font-size: 14px;
-            display: block;
-            margin-top: 15px;
-            transition: color 0.3s, transform 0.2s;
-            -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-            -webkit-tap-highlight-color: transparent;
-        }
-        .login-box a:hover {
-            color: #1c86ee;
-            transform: scale(0.90);
-        }
-       .notification {
-    position: fixed;
-    top: 85%;
-    left: 75%;
-    transform: translate(-50%, -50%);
-    background: #ff0000;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 10px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-    font-size: 16px;
-    z-index: 3;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-.notification.show {
-    opacity: 1;
-}
 
-        #bio-content {
+        .bio-container {
             background: rgba(0, 0, 0, 0.85);
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
-            width: 80%;
-            max-width: 400px;
-            height: auto;
-            box-sizing: border-box;
             text-align: center;
-            margin: auto;
-            position: relative;
-            z-index: -7;
-            top: 20%;
-            transform: translateY(-50%);
-            
+            width: 90%;
+            max-width: 400px;
         }
-        #bio-content p {
+
+        .bio-container p {
             margin: 10px 0;
+            font-size: 18px;
         }
+
         .bio-buttons {
             margin-top: 20px;
-            -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-            -webkit-tap-highlight-color: transparent;
         }
+
         .bio-buttons button {
             background: #1e90ff;
             border: none;
@@ -210,119 +49,46 @@
             cursor: pointer;
             margin: 5px;
             transition: background 0.3s, transform 0.2s;
-            -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-            -webkit-tap-highlight-color: transparent;
         }
+
         .bio-buttons button:hover {
-    background: #1c86ee;
-    transform: scale(0.90);
-}
+            background: #1c86ee;
+            transform: scale(0.95);
+        }
+
+        video.background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            filter: blur(8px);
+            opacity: 0.7;
+        }
     </style>
 </head>
 <body>
-    <div class="menu">
-        <a href="#" id="bio-link" class="active">BIO</a>
-    </div>
-    <div class="content-container">
-        <video class="video-background" autoplay muted loop>
-                <source src="video/VID_20241201_144313_293.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        <div id="bio" class="content active">           
-            <div id="bio-content">
-                <p>● Name: ???</p>
-                <p>● Y.o: 14</p>
-                <p>● Birthday: 14.05</p>
-                <p>● Country: 🇷🇺 Russia </p>
-                <p>● City: ???</p>
-                <p>● Languages: 🇺🇸 English,, 🇷🇺 Russian</p>
-                <div class="bio-buttons">
-                    <button onclick="window.location.href='https://t.me/fillsofficial'">Foxy437</button>
-                    <button onclick="window.location.href='http://t.me/send?start=IV43ZGy82G6R'">Donate</button>
-                </div>
-            </div>
+    <video class="background-video" autoplay muted loop>
+        <source src="video/VID_20241201_144313_293.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="bio-container">
+        <p>● Name: Artem</p>
+        <p>● Y.o: 13</p>
+        <p>● Birthday: 28.05</p>
+        <p>● Country: 🇺🇦 Ukraine</p>
+        <p>● City: Buchach</p>
+        <p>● Languages: 🇺🇸 English, 🇺🇦 Ukrainian, 🇷🇺 Russian</p>
+
+        <div class="bio-buttons">
+            <button onclick="window.location.href='https://t.me/Foxy437'">Foxy437</button>
+            <button onclick="window.location.href='http://t.me/send?start=IV43ZGy82G6R'">Donate</button>
+            <button onclick="window.location.href='https://example.com/page1'">Page 1</button>
+            <button onclick="window.location.href='https://example.com/page2'">Page 2</button>
         </div>
-               
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            showContent('bio');
-        });
-
-        document.getElementById('bio-link').addEventListener('click', function() {
-            showContent('bio');
-        });
-        document.getElementById('fohosting-link').addEventListener('click', function()
-        {
-            showContent('fohosting');
-        });
-
-        function showContent(contentId) {
-            const container = document.querySelector('.content-container');
-            const links = document.querySelectorAll('.menu a');
-
-            if (contentId === 'bio') {
-                container.style.transform = 'translateX(0)';
-            } else {
-                container.style.transform = 'translateX(-50%)';
-            }
-
-            const contents = document.querySelectorAll('.content');
-            contents.forEach(content => {
-                if (content.id === contentId) {
-                    content.classList.add('active');
-                } else {
-                    content.classList.remove('active');
-                }
-            });
-
-            links.forEach(link => {
-                if (link.id === contentId + '-link') {
-                    link.classList.add('active');
-                } else {
-                    link.classList.remove('active');
-                }
-            });
-        }
-
-        const credentials = [
-            { username: 'Foxy437', password: 'Kyrka228+', sshHost: 's2.serv00.com', sshPassword: '*P9*gNrMDWAL#1a1c9xb' },
-            { username: 'Ronix', password: 'Kyrka228+', sshHost: 's2.serv00.com', sshPassword: '*P9*gNrMDWAL#1a1c9xb' }
-        ];
-
-        document.getElementById('login-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const username = document.getElementById('username').value.trim();
-            const password = document.getElementById('password').value.trim();
-
-            const user = credentials.find(cred => cred.username === username && cred.password === password);
-
-            if (user) {
-                localStorage.setItem('user', JSON.stringify(user));
-                window.location.href = 'terminal/terminal.html';
-            } else {
-                showNotification('Invalid username or password!');
-            }
-        });
-
-        function showNotification(message) {
-            const notification = document.getElementById('notification');
-            notification.textContent = message;
-            notification.classList.add('show');
-            setTimeout(() => {
-                notification.classList.remove('show');
-            }, 3000);
-        }
-
-        window.addEventListener('wheel', function(e) {
-            e.preventDefault();
-        }, { passive: false });
-
-        window.addEventListener('touchmove', function(e) {
-            e.preventDefault();
-        }, { passive: false });
-    </script>
 </body>
-  </html>
+</html>
