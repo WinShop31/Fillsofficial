@@ -13,6 +13,7 @@
             color: #fff;
             background: black;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             overflow: hidden;
@@ -25,6 +26,23 @@
             height: 100%;
             object-fit: cover;
             z-index: -1;
+        }
+        .top-button {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1e90ff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            z-index: 2;
+        }
+        .top-button:hover {
+            background: #0073e6;
         }
         .content {
             position: relative;
@@ -54,6 +72,9 @@
         <source src="video/video.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
+
+    <!-- New button -->
+    <button class="top-button" onclick="window.location.href='https://xn--b1aew.xn--p1ai/'">непривет.рф</button>
 
     <div class="content">
         <p>● Name: ???</p>
